@@ -1,0 +1,22 @@
+teaspoon (also t or tsp.)
+tablespoon (also T, tbl., tbs., or tbsp.)
+fluid ounce (also fl oz)
+gill (about 1/2 cup)
+cup (also c)
+pint (also p, pt, or fl pt - Specify Imperial or US)
+quart (also q, qt, or fl qt - Specify Imperial or US)
+gallon (also g or gal - Specify Imperial or US)
+ml, also milliliter, millilitre, cc (and mL only in the US, Canada and Australia).
+l, also liter, litre, (and L only in the US, Canada and Australia).
+dl, also deciliter, decilitre (and dL only in the US, Canada and Australia).
+Mass and Weight
+pound (also lb or #)
+ounce (also oz)
+mg (also milligram or milligramme)
+g (also gram or gramme)
+kg (also kilogram or kilogramme)
+Length
+mm (also millimeter or millimetre)
+cm (also centimeter or centimetre)
+m (also meter or metre)
+inch (also in or ")

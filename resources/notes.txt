@@ -1,0 +1,31 @@
+
+
+exact to vague quantity conversion in query
+    eg: 4 kg flour <-> 2 cups flour
+singular/plural items in query
+    eg: tomato <-> tomatoes
+synonym conversion
+    eg: 
+
+Ingredient parsing:
+
+ingredient format:
+    - quantity item
+    - item
+
+quantity format:
+    - number unit
+    - number
+    - number (quantity)
+    ? number (anything)
+
+number format:
+    - int
+    - float
+    - int int/int
+    - int/int
+
+unit:
+    - teaspoon, tablespoon, litres <etc>, grams <etc>, cup, pinch, etc
+    <see in measurement_units.txt>
+
