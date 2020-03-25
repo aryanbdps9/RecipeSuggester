@@ -28,3 +28,7 @@
     where `<python 3 name>` is the command used to run python 3. Usually it is `python3`, but if you are using **Anaconda**, then, it's simply `python`.
 3. The script `parseIngredients.py` will generate `.json` files in `dumps` directory.
 
+# Scripts
+- `parseIngredients.py`: This script separates quantities and items in `ingredients` field and stores into `sep_ingredients` field. (Look into the generated JSON files). 
+- `extract.py`: Contains helper functions used by `parseIngredients.py`.
+- `utils.py`: (utils -> short for utilities) Contains helper functions which can be used by many scripts.
