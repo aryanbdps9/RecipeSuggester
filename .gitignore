@@ -146,3 +146,6 @@ static
 *.json
 
 *.zip
+*.csv
+*.tsv
+*.pkl
