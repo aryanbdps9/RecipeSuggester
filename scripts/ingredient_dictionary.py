@@ -57,6 +57,7 @@ data = {}
 data.update(data1)
 data.update(data2)
 data.update(data3)
+utils.save(data, filename=path.join(datadir, 'datadict.pkl'))
 
 idh.wrd2ingrdtdict2tsv(ingredient_list, data, path.join(datadir, 'bigdict.tsv')) # Unless you wanna freeze your computer, DON'T OPEN IT! XD
 idh.print_dict_stats(ingredient_list, data, path.join(datadir, 'bigdict_stats.tsv'))

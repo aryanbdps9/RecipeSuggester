@@ -29,6 +29,7 @@
 3. The script `parseIngredients.py` will generate `.json` files in `dumps` directory.
 
 # Scripts
+- `recipe_suggester.py`: Run it to see the magic!
 - `utils.py`: (utils -> short for utilities) Contains helper functions which can be used by many scripts.
 - `parseIngredients.py`: This script separates quantities and items in `ingredients` field and stores into `sep_ingredients` field. (Look into the generated JSON files). 
 - `extract.py`: Contains helper functions used by `parseIngredients.py`.
