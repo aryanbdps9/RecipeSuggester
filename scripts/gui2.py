@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter.tix import *
+import tkinter.ttk as ttk
 import random
 import time
 import recipe_suggester as rs
@@ -48,97 +50,76 @@ scrollbar.config(command=txt1.xview)
 txt1.configure(width=100)
 txt1.grid(row=0,column=1)
 
+# def format_sep_ing(sep_ingredients):
+# 	res = ""
 
 
 #-------------Button--------------------#
-def display(receipe):
-	root=Tk()
-	root.title(receipe['title'])
-	root.geometry("700x500")
-	root.configure(bg="snow")
+def display(recipe):
+    roo=Tk()
+    roo.title(recipe['title'])
+    roo.configure(bg='snow')
+    frame_ = Frame(master=roo)
+    frame_.pack(fill=BOTH, expand=True)
+    tree = ttk.Treeview(frame_)
 
-	# scrollbar=Scrollbar(root)
-	# scrollbar.pack(side=RIGHT,fill=Y)
-	# area = Text(root, yscrollcommand = scrollbar.set,state='disabled')
-	# area.insert(END,receipe)
-	area=Message(root,text=receipe)
-	# scrollbar.configure(command=area.yview)
-	area.pack()
-	
-	root.mainloop()
+    tree['columns'] = ['Quantity']
+    tree.column('#0', minwidth=100)
+    tree.column('Quantity', minwidth=50)
+    tree.heading('#0', text='Ingredient', anchor=W)
+    tree.heading('Quantity', text='Quantity', anchor=W)
 
+    for quantity, ingredient in recipe['sep_ingredients']:
+        tree.insert("", "end", text=ingredient, values=(quantity,))
+
+    tree.pack(fill=BOTH, expand=True)
+    roo.mainloop()
 
 
 def add_label(root,row_no,col_no,title):
-	lb=Label(root,bg="snow",font=('aria',10,),text=title,fg="steel blue",bd=10,anchor='w')
-	lb.grid(row=row_no,column=col_no)
+    lb=Label(root,bg="snow",font=('aria',10,),text=title,fg="steel blue",bd=10,anchor='w')
+    lb.grid(row=row_no,column=col_no)
 
 def add_button(root,row_no,col_no,title,receipe):
-	btn=Button(root,padx=1,pady=1, bd=10 ,fg="black",font=('ariel' ,10),width=10, text=title, bg="powder blue",command=partial(display,receipe))
-	btn.grid(row=row_no,column=col_no)
+    btn=Button(root,padx=1,pady=1, bd=10 ,fg="black",font=('ariel' ,10),width=10, text=title, bg="powder blue",command=partial(display,receipe))
+    btn.grid(row=row_no,column=col_no)
 
 
 def Ref():
-	s=item.get()
-	titles,receipes=rs.give_dish(s)
-	roo=Tk()
-	roo.title("Receipe List")
-	roo.geometry("700x500")
-	roo.configure(bg='snow')
-	
+    s=item.get()
+    titles,receipes=rs.give_dish(s)
+    roo=Tk()
+    roo.title("Receipe List")
+    # roo.geometry("700x500")
+    roo.configure(bg='snow')
+    frame_ = Frame(master=roo)
+    frame_.pack(fill=BOTH, expand=True)
+    swin = ScrolledWindow(frame_, width=700, height=500)
+    swin.pack(fill=BOTH, expand=True)
+    win = swin.window
 
-	# listbox=Listbox(roo)
-	
-	#t.insert(END,"ID"+'\t'+"Dish Name")
-	s=""
-	for i in range(len(titles)):
-		add_label(roo,i+1,0,titles[i].split('\t')[1])
-		add_button(roo,i+1,2,"Receipe",receipes[i])
-		#t.insert(END,receipes[i]+'\n')
-
-	
-
-	#t.pack()
-	roo.mainloop()
-
+    # listbox=Listbox(roo)
+    
+    #t.insert(END,"ID"+'\t'+"Dish Name")
+    s=""
+    for i in range(len(titles)):
+        add_label(win,i+1,0,titles[i].split('\t')[1])
+        add_button(win,i+1,2,"Receipe",receipes[i])
+        # add_label(win,i+1,4,receipes[i])
+        #t.insert(END,receipes[i]+'\n')
+    #t.pack()
+    roo.mainloop()
 
 
 
 def reset():
-	item.set("")
-	
+    item.set("")
+    
 
 btnsearch=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="Search", bg="powder blue",command=Ref)
 btnsearch.grid(row=6,column=1)
 btnreset=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="Reset", bg="powder blue",command=reset)
 btnreset.grid(row=8,column=1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 root.mainloop() # calls the endless loop of the window, so the window will wait for any user interaction till we close it.
 

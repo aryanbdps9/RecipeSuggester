@@ -41,7 +41,7 @@ def give_dish(h):
     for idx, ranked_recipe in enumerate(ranked_recipes):
         receipes.append(data[ranked_recipe])
         titles.append(ranked_recipe+'\t'+data[ranked_recipe]['title'])
-        if (idx > 10):
+        if (idx > 20):
             break
     return titles,receipes
     

@@ -17,6 +17,9 @@ quantity format:
     - number unit
     - number
     - number (quantity)
+# New:
+    - number (quantity) unit
+    - quantity (quantity)
     ? number (anything)
 
 number format:

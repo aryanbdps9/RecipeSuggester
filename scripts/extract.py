@@ -45,7 +45,7 @@ def extract_quantity(toks, measurement_units):
             return number+units, toks_nounit
         return number + units + ['('] + sec_quantity + [')'], sec_toks_noquantity[1:]
     return number+units, toks_nounit
-    
+
 def sep_ingredient(ingredient_string, measurement_units):
     toks = utils.tokenize(ingredient_string)
     if ((len(toks) > 0) and toks[-1].lower() == 'advertisement'):
