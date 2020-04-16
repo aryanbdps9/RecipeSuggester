@@ -31,14 +31,17 @@ def ranker(input_ingredients):
 # find the list of recipes which satisfy these requirements
 # display them
 
-while True:
-    try:
-        h = input("Enter comma separated items and then press enter. Press ctrl+C then <enter> to exit.\n").strip()
-        input_ingredients = [item.strip().lower() for item in h.split(",")]
-        ranked_recipes = ranker(input_ingredients)
-        for idx, ranked_recipe in enumerate(ranked_recipes):
-            print(ranked_recipe+'\t'+data[ranked_recipe]['title'])
-            if (idx > 10):
-                break
-    except KeyboardInterrupt:
-        break
+def give_dish(h):
+    #h = input("Enter comma separated items and then press enter. Press ctrl+C then <enter> to exit.\n").strip()
+    l=h.strip()
+    input_ingredients = [item.strip().lower() for item in l.split(",")]
+    ranked_recipes = ranker(input_ingredients)
+    titles=[]
+    receipes=[]
+    for idx, ranked_recipe in enumerate(ranked_recipes):
+        receipes.append(data[ranked_recipe])
+        titles.append(ranked_recipe+'\t'+data[ranked_recipe]['title'])
+        if (idx > 10):
+            break
+    return titles,receipes
+    

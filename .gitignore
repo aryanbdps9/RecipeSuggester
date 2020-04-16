@@ -146,6 +146,13 @@ static
 *.json
 
 *.zip
+<<<<<<< Updated upstream
 *.csv
 *.tsv
 *.pkl
+=======
+
+##created by saloni
+.ipynb_checkpoints
+.ipynb
+>>>>>>> Stashed changes
