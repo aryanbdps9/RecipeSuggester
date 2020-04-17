@@ -16,11 +16,10 @@ ingredient format:
 quantity format:
     - number unit
     - number
-    - number (quantity)
 # New:
-    - number (quantity) unit
+#    - number (quantity) unit
     - quantity (quantity)
-    ? number (anything)
+    - quantity (quantity) unit
 
 number format:
     - int

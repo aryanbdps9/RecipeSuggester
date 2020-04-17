@@ -24,9 +24,16 @@
 # How to run
 1. Make sure that you have the json files in `data` folder. It can be obtained by extracting `recipes_raw.zip`.
 2. Make sure that `dumps` directory exists. (No need to remove its contents).
-2. `cd` into scripts directory and run: `<python 3 name> parseIngredients.py`
+3. `cd` into scripts directory
+
+## Run only for the first time
+4. Run `<python 3 name> parseIngredients.py`
     where `<python 3 name>` is the command used to run python 3. Usually it is `python3`, but if you are using **Anaconda**, then, it's simply `python`.
-3. The script `parseIngredients.py` will generate `.json` files in `dumps` directory.
+5. The script `parseIngredients.py` will generate `.json` files in `dumps` directory.
+6. Run `<python 3 name> ingredient_dictionary.py`.
+
+## Run this to launch the program
+7. Run `<python 3 name> gui2.py`.
 
 # Scripts
 - `gui2.py`: Run it!

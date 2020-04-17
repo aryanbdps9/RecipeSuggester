@@ -22,7 +22,7 @@ def ranker(input_ingredients):
         for candidate in candidate_list:
             if candidate not in candidate_scores:
                 candidate_scores[candidate] = 0.0
-            candidate_scores[candidate] += score
+            candidate_scores[candidate] += 1.0/score
     
     scored_ids = sorted(candidate_scores, key=lambda x: candidate_scores[x], reverse=True)
     return scored_ids
